@@ -1,3 +1,6 @@
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
+
 let n : number = Number (prompt("n?"))
 
 while (n!=-1){
