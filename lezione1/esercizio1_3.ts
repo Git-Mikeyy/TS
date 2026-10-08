@@ -1,6 +1,8 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+console.clear ()
+
 let secondi : number = Number(prompt("Inserisci i secondi: "))
 let minuti : number , ore : number
 
