@@ -1,6 +1,9 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+// 2) (Max) Scrivere un programma che legga 3 numeri da tastiera e mostri a video il loro massimo.
+
+
 console.clear()
 
 let a : number = Number(prompt("inserisci il primo valore: "))

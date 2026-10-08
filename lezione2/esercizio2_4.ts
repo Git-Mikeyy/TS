@@ -1,6 +1,11 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+// 4) (Media) Si scriva un programma che legga da tastiera 4 interi
+// e stampi la media aritmetica di tutti i valori diversi da zero 
+// e di segno uguale all’ultimo valore della sequenza.
+
+
 let a : number = Number(prompt("inserisci il primo valore: "))
 let b : number = Number(prompt("inserisci il secondo valore: "))
 let c : number = Number(prompt("inserisci il terzo valore: "))
