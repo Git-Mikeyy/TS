@@ -9,3 +9,4 @@ let x : boolean = Boolean (prompt("inserisci true o false per x: "));
 let y : boolean = Boolean (prompt("inserisci true o false per y: "))
 console.log(x || y)
 //soluzione del prof ma migliorata da me , lol
+
