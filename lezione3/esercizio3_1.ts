@@ -1,6 +1,7 @@
 import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
+/*
 
 let d : number = Number (prompt("inserisci il pisello: "))
 let sum : number = 0
