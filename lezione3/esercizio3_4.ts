@@ -6,7 +6,7 @@ let primo: boolean = true
 let d: number = 2
 
 let start : number = Date.now()
-for (let i: number = 0; i < 10; i++) {
+for (let i: number = 0; i < 10; i++) { //serve per fare la stessa cosa di prima ma con 10 numeri 
 let n: number = Number(prompt("inserisci numero: "))
     while (primo && d <= n - 1) { //ciclo per vedere se un numero non è primo, infatti se un numero è primo uscirà dal ciclo.
         if (n % d == 0) { //il numero non è primo 
