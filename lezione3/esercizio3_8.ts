@@ -12,33 +12,33 @@ con il quale possiamo fare la media dei positivi se n è positivo,
 la media dei negativi se n è negativo, altrimenti se n è 0 daremo una stampa di errore.
 */
 
-let countPositivi: number = 0
-let countNegativi: number = 0
-let sumPositivi: number = 0
-let sumNegativi: number = 0
-let n: number = 0
-for (let i: number = 0; i < 10; i++) {
+let countPositivi : number = 0
+let countNegativi : number = 0
+let sumPositivi : number = 0
+let sumNegativi : number = 0
+let n : number = 0
+for (let i : number = 0 ; i<10 ; i++){
     n = Number(prompt("inserisci il numero: ")) //inserimento ricorsivo di 10 numeri
 
-    if (n < 0) { //somma e conteggio negativi
+    if(n<0){ //somma e conteggio negativi
         sumNegativi += n
-        countNegativi++
+        countNegativi ++
     }
 
-    else if (n > 0) { //somma e conteggio positivi
+    else if (n>0){ //somma e conteggio positivi
         sumPositivi += n
-        countPositivi++
+        countPositivi ++
     }
 
 }
 //qui ora abbiamo l'ultimo n inserito, se è negativo:
 
-if (n < 0) { //facciamo la media dei negativi
-    console.log(sumNegativi / countNegativi)
+if (n<0){ //facciamo la media dei negativi
+    console.log(sumNegativi/countNegativi)
 }
 //altrimenti facciamo la media dei positivi
-else if (n > 0) {
-    console.log(sumPositivi / countPositivi)
+else if (n>0){
+    console.log(sumPositivi/countPositivi)
 }
 //se l'ultimo è 0 stampiamo":
 else {
