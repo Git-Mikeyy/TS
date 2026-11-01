@@ -51,23 +51,3 @@ for (let i: number = 0; i < 8; i++) {
     }
 }
 console.log(`${countpalloncini} palloncini e ${countfestone} festoni`)
-/*  let oggetto : string = String(prompt("inserisci l'oggetto per la festa che vuoi comprare (palloncini, festone): "))
-   switch (oggetto){
-       case "palloncini" :
-       
-       if(countpalloncini <6){
-           soldi -= 4
-           countpalloncini++
-       }
-       else
-       break
-
-       case "festone" : 
-       soldi -= 3
-       countfestone++
-       break
-
-       default : 
-       console.log("articolo inserito non corretto")
-   }
-*/
