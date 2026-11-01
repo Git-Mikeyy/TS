@@ -17,3 +17,57 @@ Ad esempio la combinazione "3 palloncini + 5 festoni" rispetta le condizioni
 (sono 8 articoli, almeno uno di ogni tipo, con costo totale). Questa combinazione
 è diversa da "5 palloncini + 3 festoni", che rispetta anch'essa le condizioni.
 */
+
+let soldi: number = 30
+let countpalloncini: number = 0
+let countfestone: number = 0
+
+for (let i: number = 0; i < 8; i++) {
+
+
+    let articolo: string = String(prompt(`inserisci articolo numero ${i} (palloncini o festone): `))
+
+    if (articolo == "palloncini" && soldi >= 6) {
+        let soldinecessari = (countfestone === 0) ? 7 : 4
+        if (soldi >= soldinecessari) {
+            countpalloncini++
+            soldi -= 4
+        }
+        else {
+            console.log("Non puoi comprare un palloncino, budget insufficiente")
+            i--
+        }
+    }
+
+    else if (articolo == "festone") {
+        if (soldi >= 3) {
+            countfestone++
+            soldi -= 3
+        }
+    }
+    else {
+        console.log("errore, non hai abbastanza soldi per un festone")
+        i--
+    }
+}
+console.log(`${countpalloncini} palloncini e ${countfestone} festoni`)
+/*  let oggetto : string = String(prompt("inserisci l'oggetto per la festa che vuoi comprare (palloncini, festone): "))
+   switch (oggetto){
+       case "palloncini" :
+       
+       if(countpalloncini <6){
+           soldi -= 4
+           countpalloncini++
+       }
+       else
+       break
+
+       case "festone" : 
+       soldi -= 3
+       countfestone++
+       break
+
+       default : 
+       console.log("articolo inserito non corretto")
+   }
+*/
