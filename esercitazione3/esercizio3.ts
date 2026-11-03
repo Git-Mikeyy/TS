@@ -11,18 +11,22 @@ La funzione deve restituire un oggetto avente come chiavi le parole,
 
 Le parole possono contenere solamente lettere minuscole e/o maiuscole. Commentare opportunamente il codice.
  */
-
+type parole = {[chiave:string]:number}
+//creo il tipo che mi serve per il nuovo oggetto da restituire
 function contaParole(a: string[]) {
-    interface Mj {
-        parole: string,
-        occor: number
-    }
-    let count = {}
+  
+    let oggettoparole :parole ={} //nuovo oggetto da restituire
+    
 
-    for (let i in a) {
-        count[i] = (count[i] || 0) +1
+  for (let i of a){ //scorro l'array a 
+    if(oggettoparole[i] == undefined){ //se la parola non è ancora presente nel nuovo oggetto, la inserisco e assegno valore 1
+        oggettoparole[i] = 1
     }
-    let obj: Mj = 
-
+    else { //se la parola è già presente aumento di 1 la sua occorrenza
+        oggettoparole[i] ++
+    }
+  }
+  return oggettoparole // ritorno
 }
-
+let a : string[] = ['cane', 'seme', 'cane', 'ottimale']
+console.log(contaParole(a))

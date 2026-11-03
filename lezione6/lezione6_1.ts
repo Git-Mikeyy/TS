@@ -14,18 +14,18 @@ let pippo: { passione: string, età: number, capelli: boolean } = { passione: "F
 
 //per definire il tipo di un oggetto omogeneo (con tutti i valori dello stesso tipo)
 //di cui non sono noti a priori i nomi delle chiavi, si può usare il tipo:
-{ [chiave: string]: boolean }
+{ [chiave: string]: boolean } //chiave di tipo stringa e valore di tipo boolean
 /*
 Questo sopra indica che tutte le chiavi hanno valore boolean, non si possono quindi mischiare chiavi di tipo diverso,
 
 Disclaimer: In typescript per gli oggetti esiste il tipo generico 'object', denota array, funzioni e oggetti.
-            Ma noi nel corso non useremo il tipo object per essere piú accurati e meno ambigui possibile.
+            Ma noi nel corso non useremo il tipo Object per essere piú accurati e meno ambigui possibile.
 
 L'operazione principale sugli oggetti è l'accesso a un membro (chiave).
 Come si fa? : cerchiamo la chiave nome in pippo:
 - pippo.nome ("Filippo") oppure pippo["nome"] ("Filippo")
 
-pippo -> {capelli: true, eta:36 , nome: "Guendalino"}
+
 
 Altre operazioni sono invece:
 -controllo se una chiave esiste:  chiave in oggetto
@@ -50,4 +50,30 @@ Object.entries(pippo) -> [["nome", "Filippo"], ["età", 35], ["capelli", true]]
 //posso aggiungere chiavi a un oggetto OMOGENEO già esistente
 let pluto: { [chiave: string]: number } = { età: 12 }
 
-"età" in pluto -> true
+"età" in pluto -> true  "occhi" in pluto -> false
+
+for (let k in pluto) {
+    console.log(k) //stampa chiave età
+    console.log(pluto[k])//Funziona perché è omogeneo e stampa 12
+}
+pluto.zampe = 4 //aggiungo chiave zampe e valore 4 a pluto
+
+Object.keys(pluto) -> ["età", "zampe"]
+Object.entries(pluto) -> [["età", 12], ["zampe", 4]]
+
+/*
+Se vogliamo definire tanti oggetti dello stesso tipo, è scomodo ripetere la tipizzazione dell'oggetto.
+Possiamo definire nuovi tipi mediante l'uso di type:
+*/
+type NumArray = number[] //creo il tipo per indicare gli array di numeri
+type MyObject = { nome: string, età: number } //tipo di un oggetto con due chiavi stringa, con valori stringa e numero
+
+let a: NumArray = [12, 31, 1]
+let pippo: MyObject = { nome: "Pippo", età: 35 }
+
+/*
+Introduciamo il costrutto specifico per definire la struttura di un oggetto: Le Interfacce
+Un'interfaccia rappresenta un "contratto" : TypeScript controlla che gli oggetti dichiarati 
+con quel tipo, rispettino la struttura dichiarata.
+Per ora meglio usare type, useremo le interfacce quando faremo le classi.
+*/

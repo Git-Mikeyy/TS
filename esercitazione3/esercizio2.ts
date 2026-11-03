@@ -17,15 +17,24 @@ libreria = [ {categoria: 'romanzo', titolo: 'Il Nome della Rosa', autore: 'Umber
 seleziona(libreria)  →  [ {titolo: 'Il Nome della Rosa', autore: 'Umberto Eco', anno: 1980},
                           {titolo: 'Il Sentiero dei Nidi di Ragno', autore: 'Italo Calvino', anno: 1947} ] */
 
-function selezione(libri: Libro[]): LibroSenzaCategiore[] {
-    let arr: Libro[] = []
+function selezione(libri: Libro[]): LibroSenzaCategorie[] {
+    let newarray : LibroSenzaCategorie[] = []
 
-    for (let categoria in libri) {
+    
 
-        arr.push()
-    }
+    for (let k: number = 0 ; k<libri.length ; k++){
+        
+        if(libri[k].categoria == 'romanzo'){
+            newarray.push({titolo : libri[k].titolo , autore : libri[k].autore , anno: libri[k].anno })
+        }
+    }   
+    return newarray
 }
+
+type Libro = {categoria:string, titolo: string, autore:string, anno:number}
+type LibroSenzaCategorie = {titolo:string, autore:string, anno:number}
 let libri = [{ categoria: 'romanzo', titolo: 'Il Nome della Rosa', autore: 'Umberto Eco', anno: 1980 },
 { categoria: 'romanzo', titolo: 'Il Sentiero dei Nidi di Ragno', autore: 'Italo Calvino', anno: 1947 },
 { categoria: 'saggio', titolo: 'Trattato di semiotica generale', autore: 'Umberto Eco', anno: 1975 },
 { categoria: 'graphic novel', titolo: 'Persepolis', autore: 'Marjane Satrapi', anno: 2000 }]
+console.log(selezione(libri))

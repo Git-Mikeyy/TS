@@ -12,65 +12,6 @@ const prompt = promptSync();
  Per ciascun taglio effettivamente usato, va stampato quante monete di quel valore vengono restituite.
 */
 
-/* let prezzo : number = 5
-let moneta2 =0, moneta1=0,moneta05=0 , moneta02=0 , moneta01=0 , moneta005=0 , moneta001 =0
-let moneta : number = 0
-let soldi : number = 0
-let resto : number = 0
-let monetaresto : number = 0
-let restousato : string = ""
-while (soldi<prezzo){
-    moneta = Number(prompt("inserisci una moneta: "))
-    soldi +=moneta
-}
-resto = soldi - prezzo
-restousato = "resto = "
-while(resto>0){
-    if(restousato != "resto = "){
-        restousato += "+"
-    }
-switch (true) {
-case resto>=2 : 
-monetaresto = 2
-moneta2 ++
-break
-
-case resto<2 && resto>=1 : 
-monetaresto = 1
-moneta1++
-break
-
-case resto<1 && resto>=0.50 : 
-monetaresto = 0.50
-moneta05++
-break
-
-case resto<0.50 && resto>=0.20 :
-monetaresto = 0.20
-moneta02++
-break
-
-case resto<0.20 && resto >= 0.10 :
-monetaresto = 0.10
-moneta01++
-break
-
-case resto<0.10 && resto>=0.05 :
-monetaresto = 0.05
-moneta005++
-break
-
-case resto<0.05 && resto>=0.01: 
-monetaresto = 0.01
-moneta001 ++
-break
-
-}
-resto -= monetaresto
-}
-console.log(restousato) */
-//mi sono impappinato, lo lascio così, qui sotto metto quello della prof
-
 let prezzo: number = Number(prompt("Prezzo da pagare (€):")); 
 console.log("Il prezzo da pagare è "+String(prezzo)+" €"); //un modo per unire stringhe "+...+" riconverte prezzo in stringa
 let prezzoCentesimi: number = Math.round(prezzo * 100); //si lavora meglio con i centesimi
