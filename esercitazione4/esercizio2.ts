@@ -35,22 +35,25 @@ simmetrica([[7]])           →  [true, 7] */
 function simmetrica(m: number[][]): [boolean, number] {
     let countrighe: number = 0
     let countcolonne: number = 0
-    let simmetrica: boolean = false
-    let quadrata: boolean = false
+    let simmetrica: boolean = true
+    let quadrata: boolean = true
     let quadrata_simmetrica: boolean = false
-    for (let i: number = 0; i < m.length; i++) {
+    let i: number = 0
+    let j: number = 0
+    for (i = 0; i < m.length; i++) {
         countrighe++
-        for (let j: number = 0; j < m.length; j++) {
+        for (j = 0; j < m.length; j++) {
             countcolonne++
-            if (m[i][j] == m[j][i]) //simmetrica
-                simmetrica = true
+            if (m[i][j] !== m[j][i]) //simmetrica
+                simmetrica = false
         }
+        if (m[i].length !== m.length) //è quadrata
+            quadrata = false
+
     }
 
-    if (Math.sqrt(countrighe * countcolonne) == countrighe) //è quadrata
-        quadrata = true
-    if (quadrata == simmetrica)
-        quadrata_simmetrica = true
+    quadrata_simmetrica = quadrata && simmetrica
+
     if (quadrata_simmetrica) {
         return [quadrata_simmetrica, traccia(m)]
     }
@@ -66,4 +69,4 @@ function traccia(m: number[][]): number {
     }
     return traccia
 }
-console.log(simmetrica([[1, 2, 3], [2, 5, 6], [3, 6, 9]]))
+//manca una piccola cosa da debuggare ma a regola funziona
