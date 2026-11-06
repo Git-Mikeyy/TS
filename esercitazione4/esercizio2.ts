@@ -32,35 +32,30 @@ simmetrica([[1, 2, 3],
             [4, 5, 6]])     →  [false, NaN]    (non quadrata: 2 righe di lunghezza 3)
 simmetrica([[7]])           →  [true, 7] */
 
+       
+    
+
 function simmetrica(m: number[][]): [boolean, number] {
-    let countrighe: number = 0
-    let countcolonne: number = 0
     let simmetrica: boolean = true
-    let quadrata: boolean = true
-    let quadrata_simmetrica: boolean = false
     let i: number = 0
     let j: number = 0
+    
     for (i = 0; i < m.length; i++) {
-        countrighe++
-        for (j = 0; j < m.length; j++) {
-            countcolonne++
+            if (m[i].length !== m.length) //è quadrata
+            return [false, NaN]
+    for (j = 0; j < m.length; j++) {
             if (m[i][j] !== m[j][i]) //simmetrica
-                simmetrica = false
+            simmetrica = false
         }
-        if (m[i].length !== m.length) //è quadrata
-            quadrata = false
-
     }
-
-    quadrata_simmetrica = quadrata && simmetrica
-
-    if (quadrata_simmetrica) {
-        return [quadrata_simmetrica, traccia(m)]
+    if (simmetrica){
+        return [true,traccia(m)]
     }
-    else {
-        return [false, NaN]
+    else{
+        return [false,traccia(m)]
     }
 }
+
 
 function traccia(m: number[][]): number {
     let traccia: number = 0

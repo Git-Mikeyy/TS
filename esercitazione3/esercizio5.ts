@@ -41,50 +41,49 @@ Beta e Alfa hanno entrambi media 3: vince il nome alfabeticamente minore. Gamma 
 Commentare opportunamente il codice.
 */
 
-interface prodotto {
+interface Prodotto {
     nome: string,
     valutazioni: {
         [chiave: string]: number[]
     }
 }
-function prodottoMigliore(a: prodotto[], p: string): string {
+function prodottoMigliore(a: Prodotto[], p: string): string {
     let migliore: string = ""
     let medias: number = 0
     let mediamax: number = -Infinity
     for (let i: number = 0; i < a.length; i++) {
-        medias = media(a, p)
+        medias = media(a[i], p)
         if (medias > mediamax) {
             mediamax = medias
             migliore = a[i].nome
         }
-        else if (medias == mediamax && a[i].nome.length < migliore.length) {
+        else if (medias == mediamax && a[i].nome < migliore) {
             migliore = a[i].nome
         }
     }
     return migliore
 }
 
-function media(a: prodotto[], p: string): number {
+function media(a: Prodotto, p: string): number {
     let sum: number = 0
     let count: number = 0
-    for (let i: number = 0; i < a.length; i++) {
-        if (a[i].valutazioni[p] != undefined) {
-            let arrayvalori = a[i].valutazioni[p]
-            for (let j: number = 0; j < arrayvalori.length; j++) {
-                sum += arrayvalori[j]
-                count++
-            }
-
-            return sum / count
+    if (a.valutazioni[p] != undefined) {
+        let arrayvalori = a.valutazioni[p]
+        for (let j: number = 0; j < arrayvalori.length; j++) {
+            sum += arrayvalori[j]
+            count++
         }
-        else break
+
+
     }
+    return sum / count
 }
 
-let a = [{ nome: "Prodotto1", valutazioni: { qualita: [3, 4, 5], prezzo: [2, 3, 3, 1, 2, 6, 1] } },
+
+let a: Prodotto[] = [{ nome: "Prodotto1", valutazioni: { qualita: [3, 4, 5], prezzo: [2, 3, 3, 1, 2, 6, 1] } },
 { nome: "Prodotto2", valutazioni: { qualita: [7, 7, 8, 4], design: [2, 3, 1, 5] } },
 { nome: "Prodotto3", valutazioni: { prezzo: [9], comoditaUso: [5, 6, 6, 5, 5] } }]
-let p: string = "qualità"
-console.log(prodottoMigliore(a, "qualita"))
+let p: string = "qualita"
+console.log(prodottoMigliore(a, p))
 
 
