@@ -51,4 +51,4 @@ for (let i: number = 0; i < 8; i++) {
     }
 }
 console.log(`${countpalloncini} palloncini e ${countfestone} festoni`)
-//questo è impossibile veramente, non è giusto così ma ok
+//mancano le 8000 combinazioni, la prof è matta
