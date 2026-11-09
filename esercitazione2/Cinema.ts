@@ -37,5 +37,30 @@ let sala: number[][] = [
     [0, 0, 1, 0, 0],
     [1, 1, 0, 1, 0]
 ]
-
-for (let i: number = 0; i)
+let postiOccupati : number = 0
+let postiLiberi : number = 0
+let occupatiPerFila : number[] = []
+let fileComplete : number = 0
+for (let i: number = 0; i<sala.length; i++){
+  if(sala[i][0] == 1){
+    occupatiPerFila[i]
+  } 
+  let contaFile : number = 0
+  for(let j : number = 0 ; j<sala[i].length ; j++){
+    if(sala[i][j] == 1){
+      postiOccupati++
+      contaFile++
+    }
+    
+    if(sala[i][j] == 0){
+      postiLiberi++
+    }
+  }
+  if(postiOccupati == sala[i].length){
+    fileComplete++
+  }
+  if(contaFile == 5){
+    occupatiPerFila.push(contaFile)
+  }
+}
+//da finire
