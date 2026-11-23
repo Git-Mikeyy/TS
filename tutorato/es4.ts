@@ -31,6 +31,6 @@ filtraCorso(a,f)=[["Bianchi", 681510], ["Verdi", 699455], ["Verdi", 677320]]
 Tip: nell'array dell'esempio, per accedere alla matricola di "Verdi" basta scrivere a [2][1]
  */
 
-function filtracorso(a: [string, number], f): {
-
+function filtracorso(a: [string, number], f): { 
+    
 }
