@@ -2,7 +2,7 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 /*
-FUNZIONI RIXCORSIVE
+FUNZIONI RICORSIVE
 contengono una chiamata a loro stesse.
 Hanno almeno un CASO BASE altrimenti non terminano (stack overflow), la funzione senza non sa quando finire.
 
