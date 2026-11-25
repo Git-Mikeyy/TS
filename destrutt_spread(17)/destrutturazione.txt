@@ -1,0 +1,9 @@
+Destrutturazione
+
+quando si prende un tipo strutturato (array, oggetto) e lo si spacchetta andando a guardare al suo interno.
+Se si ha un array di array si può destrutturare così da lavore con i singoli array.
+Se si destruttura tipo: let [a,b] = A , t.c A = [1,3,5], 5 verrà ignorato.
+Al contrario se A ha un elemento in meno a quello che si richiede a sinistra, l'elemento mancante verrà riempito con un undefined.
+Si può fare anche con valori di default tipo [a,b,c=3,d=4] = A, se A ha l'elemento corrispondente ad c o d , c o d prende il valore 
+dell'array e non quello di default, ha la priorità, altrimenti valore di default.
+Se si vogliono solo alcuni elementi  dell'array si può mettere a sinistra [ , , c] = A , le parti vuote resteranno vuote, come assegnare un elemento al nulla.

@@ -7,3 +7,10 @@ Come si fa?
 
 ->Esempio e esercizi su file Array+funzioni.ts
 
+Come sviluppare una programmazione modulare partendo dalla traccia:
+
+1. Leggi la traccia e sottolinea i sostantivi (->dati) e i verbi (->azioni)
+2. Rappresenta i dati:  un tipo per ogni cosa della traccia, un array per gli insiemi, una costante per i numeri fissi.
+3. Dividi in funzioni: una per azione, ciascuna con un solo compito. Scrivi solo la firma (cosa entra->cosa esce)
+4. Scrivi il programma principale come sequenza di chiamate; poi implementa e prova una funzione alla volta.
+
