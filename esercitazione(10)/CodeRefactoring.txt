@@ -1,0 +1,9 @@
+CODE REFACTORING
+Il code refactoring è la tecnica di spezzettare un codice in piccole funzioni che si chiamano tra di loro creando una catena.  
+Facciamo questo per migliorare la leggibilità e la praticità di debugging del codice. Queste funzioni come la ricerca di un massimo può essere usata tranquillamente anche in altri progetti o più volte nello stesso.
+Come si fa?
+1. si individuano i blocchi di codice ripetuti, o che ad occhio sanno di pezzo indipendente.
+2. Si prende quel blocco e se ne estrae una funzione con (parametri=ciò che cambia/deve cambiare, return = ciò che vogliamo fuori). 
+
+->Esempio e esercizi su file Array+funzioni.ts
+
