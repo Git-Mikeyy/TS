@@ -2,7 +2,7 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 //ITERATIVA
-function Reverse(a: number[]): number[] {
+/* function Reverse(a: number[]): number[] {
     let opposto: number[] = a
     let i: number = 0
     let j: number = opposto.length - 1
@@ -20,7 +20,10 @@ function Reverse(a: number[]): number[] {
     }
 }
 console.log(Reverse([1, 2, 3, 4, 9, 2]))
-
+ */
 //RICORSIVA
 
 //CON METODI
+function Reverse (a:number[]):number[]{
+
+}
